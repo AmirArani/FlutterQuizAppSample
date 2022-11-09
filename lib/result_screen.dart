@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:quiz_app/play_quiz_screen.dart';
 
@@ -33,8 +31,8 @@ class ResultScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                answerTab(title: 'Correct Answers', count: correctAnswers),
-                answerTab(title: 'Wrong Answers', count: wrongAnswers),
+                AnswerTab(title: 'Correct Answers', count: correctAnswers),
+                AnswerTab(title: 'Wrong Answers', count: wrongAnswers),
               ],
             ),
             ElevatedButton(
@@ -48,7 +46,7 @@ class ResultScreen extends StatelessWidget {
                 },
                 style:
                     ElevatedButton.styleFrom(backgroundColor: foregroundColor),
-                child: Text(
+                child: const Text(
                   'Restart Quiz',
                   style: TextStyle(
                     color: backgroundColor,
@@ -61,11 +59,11 @@ class ResultScreen extends StatelessWidget {
   }
 }
 
-class answerTab extends StatelessWidget {
+class AnswerTab extends StatelessWidget {
   final String title;
   final int count;
 
-  const answerTab({
+  const AnswerTab({
     Key? key,
     required this.title,
     required this.count,
